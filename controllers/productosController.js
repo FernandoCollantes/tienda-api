@@ -1,9 +1,20 @@
-//Clase completa, hacer las demás
-const productosService = require('../services/productosService');
+
+const productosService = require("../services/productosService");
 exports.obtenerTodos = (req, res) => {
-const productos = productosService.listar();
-res.json(productos);
+  const tipo = req.query.tipo;
+  var productos;
+
+  if (tipo == 0 || tipo == null ) {
+     productos = productosService.listar();
+  } else {
+     productos = productosService.listarConCategorias();
+  }
+
+  res.json(productos);
 };
+
+
+
 exports.obtenerPorId = (req, res) => {
 const producto = productosService.buscarPorId(parseInt(req.params.id));
 producto ? res.json(producto) : res.status(404).json({ mensaje: 'No encontrado' });

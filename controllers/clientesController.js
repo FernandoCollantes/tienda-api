@@ -1,5 +1,5 @@
 //Clase completa, hacer las demás
-const categoriasService = require('../services/clientesService');
+const clientesService = require('../services/clientesService');
 exports.obtenerTodos = (req, res) => {
 const clientes = clientesService.listar();
 res.json(clientes);

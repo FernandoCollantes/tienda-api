@@ -1,11 +1,11 @@
-
-const proveedoresTodos = (req, res) => {
+const proveedoresService = require('../services/proveedoresService');
+exports.obtenerTodos = (req, res) => {
 const proveedores = proveedoresService.listar();
 res.json(proveedores);
 };
 exports.obtenerPorId = (req, res) => {
-const proveedor = proveedoresService.buscarPorId(parseInt(req.params.id));
-proveedor ? res.json(proveedor) : res.status(404).json({ mensaje: 'No encontrado' });
+const producto = proveedoresService.buscarPorId(parseInt(req.params.id));
+producto ? res.json(producto) : res.status(404).json({ mensaje: 'No encontrado' });
 };
 exports.crear = (req, res) => {
 const nuevo = proveedoresService.crear(req.body);

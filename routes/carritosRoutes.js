@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
-const carritosController = require('../controllers/carrritosController');
+const carritosController = require('../controllers/carritosController');
 router.get('/', carritosController.obtenerTodos);
 router.get('/:id', carritosController.obtenerPorId);
 router.post('/', carritosController.crear);

@@ -3,7 +3,7 @@
 forma separamos las responsabilidades→ SOLID→ Principio de responsabilidad.*/
 const express = require('express');
 const router = express.Router();
-const pedidosController = require('../controllers/pedidossController');
+const pedidosController = require('../controllers/pedidosController');
 router.get('/', pedidosController.obtenerTodos);
 router.get('/:id', pedidosController.obtenerPorId);
 router.post('/', pedidosController.crear);

@@ -3,12 +3,7 @@ const productosService = require("../services/productosService");
 exports.obtenerTodos = (req, res) => {
   const tipo = req.query.tipo;
   var productos;
-
-  if (tipo == 0 || tipo == null ) {
-     productos = productosService.listar();
-  } else {
-     productos = productosService.listarConCategorias();
-  }
+ productos = productosService.listarConCategorias();
 
   res.json(productos);
 };

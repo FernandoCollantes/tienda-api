@@ -5,8 +5,14 @@ const pedidos = pedidosService.listar();
 res.json(pedidos);
 };
 exports.obtenerPorId = (req, res) => {
+
+
 const pedido = pedidosService.buscarPorId(parseInt(req.params.id));
+
+
 pedido ? res.json(pedidos) : res.status(404).json({ mensaje: 'No encontrado' });
+
+
 };
 exports.crear = (req, res) => {
 const nuevo = pedidosService.crear(req.body);

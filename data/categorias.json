@@ -1,4 +1,14 @@
 [
-{ "id": 1, "nombre": "Periféricos" },
-{ "id": 2, "nombre": "Componentes" }
+  {
+    "id": 1,
+    "nombre": "Periféricos"
+  },
+  {
+    "id": 2,
+    "nombre": "Componentes"
+  },
+  {
+    "nombre": "Accesorios",
+    "id": 3
+  }
 ]

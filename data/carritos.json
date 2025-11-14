@@ -1,1 +1,18 @@
-[{ "id": 1, "clienteId": 1, "productos": [1, 2] }]
+[
+  {
+    "id": 1,
+    "clienteId": 1,
+    "productos": [
+      1,
+      2
+    ]
+  },
+  {
+    "clienteId": 1,
+    "productos": [
+      1,
+      2
+    ],
+    "id": 2
+  }
+]

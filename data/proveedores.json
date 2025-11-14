@@ -1,3 +1,12 @@
 [
-{ "id": 1, "nombre": "TechDistribuciones", "pais": "España" }
+  {
+    "id": 1,
+    "nombre": "TechDistribuciones",
+    "pais": "España"
+  },
+  {
+    "nombre": "TechDistribuciones",
+    "pais": "España",
+    "id": 2
+  }
 ]

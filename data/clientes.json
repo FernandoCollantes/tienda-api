@@ -8,5 +8,10 @@
     "nombre": "Eva Rodríguez",
     "email": "eva@example.com",
     "id": 2
+  },
+  {
+    "nombre": "Fernando Collantes",
+    "email": "fernando.ctgps@gmail.com",
+    "id": 3
   }
 ]

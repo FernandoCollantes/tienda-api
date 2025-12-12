@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const fs = require('fs');
@@ -37,6 +38,7 @@ next(); // continúa con la siguiente función
 
 // Middleware para habilitar JSON
 app.use(express.json());
+app.use(cors());
 
 // Middleware para habilitar formularios (body en formato URL-encoded)
 app.use(express.urlencoded({ extended: true }));

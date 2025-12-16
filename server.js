@@ -12,7 +12,8 @@ const jsonFiles = [
   'clientes.json',
   'pedidos.json',
   'carritos.json',
-  'proveedores.json'
+  'proveedores.json',
+  'usuarios.json'
 ];
 
 if (!fs.existsSync(dataFolder)) {
@@ -54,6 +55,7 @@ app.use('/carritos', require('./routes/carritosRoutes'));
 app.use('/proveedores', require('./routes/proveedoresRoutes'));
 app.use('/clientes', require('./routes/clientesRoutes'));
 app.use('/pedidos', require('./routes/pedidosRoutes'));
+app.use('/usuarios', require('./routes/usuariosRoutes'));
 
 
 

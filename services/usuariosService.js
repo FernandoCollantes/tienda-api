@@ -1,10 +1,15 @@
 const fs = require("fs");
 const path = require("path");
-const ruta = path.join(__dirname, "../data/proveedores.json");
+const ruta = path.join(__dirname, "../data/usuarios.json");
+
 function leer() {
   const data = fs.readFileSync(ruta, "utf-8");
   return JSON.parse(data);
 }
+function leerJSON(ruta) {
+  return JSON.parse(fs.readFileSync(ruta, "utf-8"));
+}
+
 function guardar(datos) {
   fs.writeFileSync(ruta, JSON.stringify(datos, null, 2));
 }

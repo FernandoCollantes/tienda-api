@@ -10,5 +10,13 @@
   {
     "nombre": "Carlos Basulto",
     "id": 3
+  },
+  {
+    "nombre": "Juan Pérez",
+    "id": 4
+  },
+  {
+    "nombre": "Juan Perez",
+    "id": 5
   }
 ]

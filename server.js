@@ -13,7 +13,7 @@ const jsonFiles = [
   'pedidos.json',
   'carritos.json',
   'proveedores.json',
-  'usuarios.json'
+  'auth-usuarios.json'  
 ];
 
 if (!fs.existsSync(dataFolder)) {
@@ -29,27 +29,22 @@ jsonFiles.forEach(file => {
   }
 });
 
-app.use(express.json());
-
 // Middleware para registrar todas las peticiones
 app.use((req, res, next) => {
-console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-next(); // continúa con la siguiente función
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  next();
 });
 
-// Middleware para habilitar JSON
+// Middleware para habilitar JSON y CORS
 app.use(express.json());
 app.use(cors());
-
-// Middleware para habilitar formularios (body en formato URL-encoded)
 app.use(express.urlencoded({ extended: true }));
 
+// ========== RUTAS DE AUTENTICACIÓN (SIN PROTECCIÓN) ==========
+app.use('/auth', require('./routes/authRoutes'));
 
-
-
-
-// Importar rutas
-app.use('/productos', require('./routes/productosRoutes',));
+// ========== RUTAS EXISTENTES ==========
+app.use('/productos', require('./routes/productosRoutes'));
 app.use('/categorias', require('./routes/categoriasRoutes'));
 app.use('/carritos', require('./routes/carritosRoutes'));
 app.use('/proveedores', require('./routes/proveedoresRoutes'));
@@ -57,8 +52,8 @@ app.use('/clientes', require('./routes/clientesRoutes'));
 app.use('/pedidos', require('./routes/pedidosRoutes'));
 app.use('/usuarios', require('./routes/usuariosRoutes'));
 
+// Si quieres proteger alguna ruta, usa el middleware:
+// const verificarToken = require('./middlewares/authMiddleware');
+// app.use('/productos', verificarToken, require('./routes/productosRoutes'));
 
-
-//definir el resto de routes
-//Mejora solicitada, guardar en un log de json todas las llamadas a la API
 app.listen(3000, () => console.log('Servidor escuchando en http://localhost:3000'));
